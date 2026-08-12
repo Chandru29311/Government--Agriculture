@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY Agriculture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+                <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="assets/logo_0005.webp" alt="Stackly Logo" style="height: 40px; margin-top: 5px;">
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-icons">
+             <a href="signin.html" class="nav-text-link">Sign In</a>
+            <a href="register.html" class="nav-text-link">Register</a>
+        </div>
+    
+        <div class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section data-aos="fade-up" class="hero" style="background-image: url('assets/Frame 1686551774.webp');">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Empowering Farmers. <br><span class="highlight">Strengthening Agriculture</span></h1>
+                <p data-aos="fade-up" data-aos-delay="100">The department strives to build a resilient agricultural sector that supports food security, economic growth, and the well-being of farming communities across the nation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section data-aos="fade-up" class="about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="assets/unsplash_Sf2MBY7xIkY.webp" alt="Wheat field">
+            </div>
+            <div class="about-text">
+                <h2>Building a Sustainable <span class="light">Agricultural Future</span><br>Through Innovation, Farmer Support, and<br>Government-Led <strong>Development</strong></h2>
+                <p data-aos="fade-up" data-aos-delay="100">A resilient agricultural sector that supports food security, economic growth, and the well-being of farming communities across the nation. The department strives to build a resilient agricultural sector.</p>
+                <a href="404.html" class="btn btn-dark">About Us <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section data-aos="fade-up" class="features-section">
+        <div class="container features-grid">
+            <div class="feature-card f-green">
+                <i class="fa-solid fa-seedling" style="font-size: 2rem; color: var(--primary);"></i>
+                <h3>Farmer's welfare program</h3>
+            </div>
+            <div class="feature-card f-light">
+                <h3>Digital Agriculture Services</h3>
+                <!-- <img src="assets/Frame 1686551774.webp" alt="Digital Services" class="feature-img"> -->
+            </div>
+            <div class="feature-card f-tall">
+                <img src="assets/Frame 23.webp" alt="Leaves" class="feature-bg">
+                <h3>Agricultural Innovation</h3>
+            </div>
+            <div class="feature-card f-white">
+                <h3>Sustainable Farming</h3>
+                <!-- <img src="assets/Group 427318284.webp" alt="Farming" class="feature-img-small"> -->
+            </div>
+            <div class="feature-card f-img">
+                <img src="assets/Rectangle 46.webp" alt="Hands in dirt" class="feature-img-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section data-aos="fade-up" class="statement-section">
+        <div class="container">
+            <p data-aos="fade-up" data-aos-delay="100"><strong>The department strives to build a</strong> resilient agricultural sector that supports food security, economic growth, and the well-being of farming <strong>communities across the nation.</strong></p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section data-aos="fade-up" class="services-section">
+        <div class="container">
+            <h2>Services <span class="highlight">Include</span></h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <img src="assets/Rectangle 49.webp" alt="Crop Monitoring">
+                    <div class="service-title">Crop Monitoring</div>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <img src="assets/Rectangle 51.webp" alt="Soil Analysis">
+                    <div class="service-title">Soil Analysis</div>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <img src="assets/Rectangle 52.webp" alt="Pest Management">
+                    <div class="service-title">Pest Management</div>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <img src="assets/Rectangle 43.webp" alt="Precision Agriculture"> <!-- Used another rectangle for the bug image, guessing -->
+                    <div class="service-title">Precision Agriculture</div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="404.html" class="btn btn-dark">View All Services <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section data-aos="fade-up" class="stats-section">
+        <div class="container">
+            <div class="stats-header">
+                <h2>Advancing <span class="light">Agricultural Development</span><br>Through Inclusive Support</h2>
+            </div>
+            <div class="stats-circles">
+                <div class="stat-circle circle-1" style="background-image: url('assets/unsplash_z4L4FTXlvNo.webp');">
+                    <div class="stat-overlay">
+                        <h3>850K+</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">Total Projects</p>
+                    </div>
+                </div>
+                <div class="stat-circle circle-2" style="background-color: #0b0c10;">
+                    <h3>1,200+</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Total Professionals</p>
+                </div>
+                <div class="stat-circle circle-3">
+                    <h3>150+</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 1. How it Works Section -->
+    <section data-aos="fade-up" class="how-it-works-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our <span class="highlight">Process</span></h2>
+                <p data-aos="fade-up" data-aos-delay="100">Three simple steps to elevate your farming experience.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <div class="process-icon"><i class="fa-solid fa-clipboard-user"></i></div>
+                    <h3>Register & Onboard</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Create your account and complete your farm profile to get personalized recommendations.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <div class="process-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Analyze & Plan</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Utilize our digital tools to analyze soil, weather, and market trends for better planning.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <div class="process-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Grow & Profit</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Implement expert advice and watch your yield and profitability soar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Testimonials Section -->
+    <section data-aos="fade-up" class="testimonials-section" style="background-image: url('assets/Rectangle 50.webp');">
+        <div class="testimonials-overlay">
+            <div class="container">
+                <div class="section-title text-center text-white">
+                    <h2>Success <span class="light">Stories</span></h2>
+                </div>
+                <div class="slider-wrapper" style="position: relative;">
+                    <button class="slider-btn prev-btn" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="slider-btn next-btn" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="testimonials-grid testimonial-slider">
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p data-aos="fade-up" data-aos-delay="100" class="quote">"STACKLY transformed how we manage our crops. The yield increased by 20% in the first year alone!"</p>
+                            <div class="author">- John D., Organic Farmer</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p data-aos="fade-up" data-aos-delay="100" class="quote">"The digital tools are incredibly easy to use. I can monitor my entire farm from my smartphone."</p>
+                            <div class="author">- Sarah M., Agribusiness Owner</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p data-aos="fade-up" data-aos-delay="100" class="quote">"Thanks to the weather predictions, we saved our harvest from an unexpected frost. Invaluable service."</p>
+                            <div class="author">- Michael T., Farm Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Partners Section -->
+    <section data-aos="fade-up" class="partners-section">
+        <div class="container text-center">
+            <p data-aos="fade-up" data-aos-delay="100" class="partners-title">Trusted by leading agricultural organizations worldwide</p>
+            <div class="partners-logo-grid">
+                <div class="partner-logo">AgriCorp</div>
+                <div class="partner-logo">EcoFarms</div>
+                <div class="partner-logo">GreenYield</div>
+                <div class="partner-logo">HarvestTech</div>
+                <div class="partner-logo">FarmFuture</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FAQ Section -->
+    <section data-aos="fade-up" class="faq-section bg-light-grey">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How do I apply for government schemes?</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">You can easily browse and apply for available schemes directly through your dashboard after registering.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is the digital agriculture service free?</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">We offer both free basic services and premium analytical tools tailored for commercial farms.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I use the portal on my mobile phone?</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Yes, our platform is fully responsive and optimized for all mobile devices and tablets.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How secure is my farm data?</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Your data is encrypted and stored securely. We adhere to the highest data privacy standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Latest News Section -->
+    <section data-aos="fade-up" class="latest-news-section">
+        <div class="container">
+            <div class="section-title-flex">
+                <h2>Latest <span class="light">News</span></h2>
+                <a href="blog.html" class="btn btn-dark">View All <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-img" style="background-image: url('assets/Rectangle 49.webp');"></div>
+                    <div class="news-content">
+                        <span class="news-date">Aug 10, 2026</span>
+                        <h3>Understanding Soil Microbiomes</h3>
+                        <a href="blog.html" class="read-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-img" style="background-image: url('assets/Rectangle 51.webp');"></div>
+                    <div class="news-content">
+                        <span class="news-date">Aug 5, 2026</span>
+                        <h3>Water Conservation Techniques</h3>
+                        <a href="blog.html" class="read-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-img" style="background-image: url('assets/Rectangle 52.webp');"></div>
+                    <div class="news-content">
+                        <span class="news-date">Aug 2, 2026</span>
+                        <h3>Government Subsidies in 2026</h3>
+                        <a href="blog.html" class="read-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join CTA Section -->
+    <section data-aos="fade-up" class="cta-section">
+        <div class="container">
+            <p data-aos="fade-up" data-aos-delay="100" class="cta-text">
+                <strong>Whether you're looking to apply</strong> for schemes, access expert <strong>guidance, explore</strong> agricultural innovations, or stay <strong>informed with the</strong> latest updates, our platform is <strong>committed to emp</strong>owering every step of your <strong>agricultural</strong> journey and fostering sustainable <strong>growth</strong> for future generations.
+                <!-- <img src="assets/Group 427318283.webp" alt="Leaves icon" style="height: 30px; vertical-align: middle; margin-left:10px;"> -->
+            </p>
+
+            <div class="cta-box">
+                <div class="cta-image">
+                    <img src="assets/Screenshot 2026-08-06 at 14.59.31 1.webp" alt="Farmer tablet">
+                </div>
+                <div class="cta-content">
+                    <h3>Join the National Agriculture Portal</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">A resilient agricultural sector that supports food security, economic growth, and the well-being of farming communities across the nation.</p>
+                    <a href="404.html" class="btn btn-dark">Home <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="404.html">Dashboard</a>
+                <a href="404.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="404.html">Farmer Registration</a>
+                <a href="404.html">Government Schemes</a>
+                <a href="404.html">Crop Advisory</a>
+                <a href="404.html">Soil Testing</a>
+                <a href="404.html">Market Prices</a>
+            </div>
+            <div class="footer-col">
+                <h4>Market Prices</h4>
+                <a href="404.html">Publications</a>
+                <a href="404.html">Downloads</a>
+                <a href="404.html">Policies</a>
+                <a href="404.html">News & Updates</a>
+            </div>
+            <div class="footer-col contact-info-footer">
+                <h4>Contact</h4>
+                <p data-aos="fade-up" data-aos-delay="100">STACKLY</p>
+                <p data-aos="fade-up" data-aos-delay="100"><a href="https://www.google.com/maps/place/Stackly/@11.6829566,78.1739798,17z/data=!3m1!4b1!4m6!3m5!1s0x3babefef7fd970bb:0xe11aef1a71994f9!8m2!3d11.6829566!4d78.1739798!16s%2Fg%2F11l660s35r?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-location-dot inline-icon"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</a></p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-phone inline-icon"></i> 9876543210</p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-envelope inline-icon"></i> info@stackly.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="close-menu-btn" id="close-menu-btn"><i class="fa-solid fa-xmark"></i></div>
+                        <nav class="mobile-nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Service</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-buttons">
+                <a href="signin.html" class="mobile-btn">Sign In</a>
+                <a href="register.html" class="mobile-btn mobile-btn-primary">Register</a>
+            </div>
+        </nav>
+    </div>
+                <!-- GSAP & AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if(typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

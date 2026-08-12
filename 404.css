@@ -1,0 +1,212 @@
+/* === 404 STYLES === */
+:root {
+    --text-primary: #123524;
+    --text-secondary: #3E7B27;
+    --bg-white: #fafafa;
+    --btn-green: #2d6a22;
+    --btn-green-hover: #1b4513;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-white);
+    color: #444;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.not-found-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    background: #fff;
+    box-shadow: 0 0 50px rgba(0,0,0,0.05);
+}
+
+.content-left {
+    flex: 1;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('assets/Group 427318282.webp') no-repeat top left; /* slight texture if needed */
+}
+
+.error-code {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+    
+    /* Leaf texture for text */
+    background: url('assets/Rectangle 50.webp') center center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.error-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.oops {
+    color: var(--text-secondary);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    width: 300px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+
+.divider span {
+    padding: 0 15px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.error-desc {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.error-desc-sub {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn i {
+    font-style: normal;
+}
+
+.btn-primary {
+    background-color: var(--btn-green);
+    color: white;
+    border: 2px solid var(--btn-green);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-green-hover);
+    border-color: var(--btn-green-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--btn-green);
+    border: 2px solid var(--btn-green);
+}
+
+.btn-secondary:hover {
+    background-color: #f0f7ef;
+}
+
+.content-right {
+    flex: 1.2;
+    background: url('assets/Frame 1686551774.webp') no-repeat center bottom;
+    background-size: cover;
+    position: relative;
+    border-radius: 50% 0 0 50% / 10% 0 0 10%;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+}
+
+.wooden-sign {
+    position: absolute;
+    bottom: 100px;
+    right: 80px;
+    background: url('assets/Rectangle 49.webp') center center; /* using a brown/dirt asset as wood texture */
+    background-size: cover;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+    transform: rotate(3deg);
+    border: 2px solid #5c4033;
+    color: white; /* Wait, the reference image sign text is white, like chalk or painted */
+}
+
+.wooden-sign p {
+    font-family: 'Poppins', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    line-height: 1.4;
+}
+
+/* Post for the sign */
+.wooden-sign::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background: #5c4033;
+    z-index: -1;
+    border-radius: 2px;
+}
+
+@media (max-width: 992px) {
+    .not-found-container {
+        flex-direction: column;
+    }
+    .content-right {
+        display: none; /* Hide image on small screens for simplicity */
+    }
+    .content-left {
+        padding: 40px 20px;
+    }
+    .error-code {
+        font-size: 10rem;
+    }
+}

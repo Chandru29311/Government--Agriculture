@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - STACKLY Agriculture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+                <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="assets/logo_0005.webp" alt="Stackly Logo" style="height: 40px; margin-top: 5px;">
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-icons">
+             <a href="signin.html" class="nav-text-link">Sign In</a>
+            <a href="register.html" class="nav-text-link">Register</a>
+        </div>
+    
+        <div class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- 1. Blog Hero Section -->
+    <section class="blog-hero modern-hero">
+        <div class="blog-container">
+            <span class="hero-badge" data-aos="fade-in">Latest Updates</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Insights & <span style="color: #EFE3C2;">Innovations</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200">Discover the latest trends, research, and stories driving the future of sustainable agriculture forward.</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="404.html" class="btn" style="background: #EFE3C2; color: #123524; font-weight: 600; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block;">Read Articles</a>
+                <a href="404.html" class="btn-outline-white" style="border: 2px solid white; color: white; font-weight: 600; padding: 10px 30px; border-radius: 30px; text-decoration: none; display: inline-block; transition: 0.3s;">Subscribe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Blog Categories -->
+    <section data-aos="fade-up" class="blog-categories blog-container">
+        <div class="cat-list">
+            <a href="404.html" class="active">All Topics</a>
+            <a href="404.html">Sustainable Farming</a>
+            <a href="404.html">Agri-Tech</a>
+            <a href="404.html">Crop Management</a>
+            <a href="404.html">Market Trends</a>
+            <a href="404.html">Community Voices</a>
+        </div>
+    </section>
+
+    <!-- 3. Featured Post Section -->
+    <section data-aos="fade-up" class="blog-container">
+        <div class="featured-post">
+            <div class="featured-img"></div>
+            <div class="featured-content">
+                <span class="featured-label">Featured Story</span>
+                <h2>The Role of AI in Revolutionizing Modern Crop Monitoring</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Artificial Intelligence is no longer just for tech giants. Discover how machine learning models and drone imagery are helping farmers increase yield while reducing chemical usage by up to 30%.</p>
+                <a href="404.html" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Deep Dive Section -->
+    <section data-aos="fade-up" class="deep-dive">
+        <div class="blog-container deep-dive-inner">
+            <div style="flex: 1;">
+                <h2>Deep Dive: Precision Agriculture</h2>
+                <p data-aos="fade-up" data-aos-delay="100">We spent a month with farmers utilizing state-of-the-art precision agriculture tools to understand the ROI and the environmental impact of these technologies. The results are astounding.</p>
+                <a href="404.html" class="read-more" style="color: var(--blog-accent);">Explore the Report <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div style="flex: 1;">
+                <img src="assets/blog_prec.jpg" alt="Precision Ag" style="width: 100%; border-radius: 20px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Recent Posts Grid -->
+    <section data-aos="fade-up" class="blog-container">
+        <h2 class="blog-section-title">Latest Articles</h2>
+        <div class="recent-grid">
+            <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card-img" style="background-image: url('assets/Rectangle 49.webp');"></div>
+                <div class="blog-card-content">
+                    <span class="blog-date">August 10, 2026</span>
+                    <h3>Understanding Soil Microbiomes</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">Healthy soil means healthy crops. A look into how microbiome diversity boosts resilience against pests.</p>
+                    <a href="404.html" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card-img" style="background-image: url('assets/Rectangle 51.webp');"></div>
+                <div class="blog-card-content">
+                    <span class="blog-date">August 5, 2026</span>
+                    <h3>Water Conservation Techniques</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">With changing climates, saving water is critical. Here are 5 irrigation methods changing the game.</p>
+                    <a href="404.html" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card" data-aos="fade-up">
+                <div class="blog-card-img" style="background-image: url('assets/Rectangle 52.webp');"></div>
+                <div class="blog-card-content">
+                    <span class="blog-date">August 2, 2026</span>
+                    <h3>Government Subsidies in 2026</h3>
+                    <p data-aos="fade-up" data-aos-delay="100">An updated guide on how to apply for the latest agricultural support funds available to small farms.</p>
+                    <a href="404.html" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Farming Tips Section -->
+    <section data-aos="fade-up" class="blog-container tips-section">
+        <h2 class="blog-section-title">Practical Tips for the Field</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h4>Early Seed Preparation</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Treating your seeds with bio-stimulants before planting can accelerate germination by 15%.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h4>Solar-Powered Irrigation</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Switching to solar pumps can reduce energy costs and provide consistent watering during peak sun hours.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h4>Equipment Maintenance Schedule</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Don't wait for a breakdown. Implementing a bi-weekly checklist prevents major harvest delays.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h4>Crop Rotation Patterns</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Alternate legumes with cereals to naturally replenish nitrogen levels in your soil without chemical fertilizers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Media / Video Section -->
+    <section data-aos="fade-up" class="blog-container media-gallery">
+        <h2 class="blog-section-title">Field Reports (Video)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-main">
+                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                        <span style="font-size: 2rem; margin-left: 5px; color: var(--blog-primary);">▶</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-side">
+                <div class="gallery-item gallery-sub" style="background-image: url('https://loremflickr.com/800/800/farmer,portrait/all');"></div>
+                <div class="gallery-item gallery-sub" style="background-image: url('https://loremflickr.com/800/800/vertical,farming/all');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Expert Quotes Section -->
+    <section data-aos="fade-up" class="blog-container">
+        <div class="expert-quotes">
+            <div class="quote-content">
+                <p data-aos="fade-up" data-aos-delay="100" class="quote-text">"The future of farming is not in fighting nature, but in understanding it and working alongside it with the best tools we have."</p>
+                <h4>- Dr. Elena Rostova, Lead Agronomist</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Trending Articles Section -->
+    <section data-aos="fade-up" class="blog-container">
+        <h2 class="blog-section-title">Trending This Week</h2>
+        <div class="trending-list">
+            <div class="trending-item">
+                <div class="trend-rank">01</div>
+                <div class="trend-content">
+                    <span class="blog-date">Aug 12, 2026</span>
+                    <h4><a href="404.html">The Impact of Vertical Farming in Urban Areas</a></h4>
+                </div>
+            </div>
+            <div class="trending-item">
+                <div class="trend-rank">02</div>
+                <div class="trend-content">
+                    <span class="blog-date">Aug 11, 2026</span>
+                    <h4><a href="404.html">New Subsidies Announced for Solar Irrigation</a></h4>
+                </div>
+            </div>
+            <div class="trending-item">
+                <div class="trend-rank">03</div>
+                <div class="trend-content">
+                    <span class="blog-date">Aug 09, 2026</span>
+                    <h4><a href="404.html">Top 5 Drought-Resistant Crops for 2027</a></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Author Spotlight Section -->
+    <section data-aos="fade-up" class="author-spotlight" style="background-image: url('assets/Rectangle 50.webp');">
+        <div class="spotlight-overlay">
+            <div class="blog-container text-center">
+                <h2 style="color: var(--blog-white); margin-bottom: 40px;">Meet Our Top Contributors</h2>
+                <div class="author-grid">
+                    <div class="author-card">
+                        <img src="assets/blog_auth1.jpg" alt="Author">
+                        <h3>Dr. Anna Smith</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">Soil Scientist</p>
+                        <a href="404.html" class="author-link">View Articles <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="author-card">
+                        <img src="assets/blog_auth2.jpg" alt="Author">
+                        <h3>Mark Johnson</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">Agri-Tech Analyst</p>
+                        <a href="404.html" class="author-link">View Articles <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="author-card">
+                        <img src="assets/unsplash_xJVEknsykJY.webp" alt="Author">
+                        <h3>Linda Perez</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">Policy Expert</p>
+                        <a href="404.html" class="author-link">View Articles <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Podcast Section -->
+    <section data-aos="fade-up" class="blog-container">
+        <div class="podcast-section">
+            <div class="podcast-info">
+                <h2>The STACKLY Ag-Cast</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Listen to our weekly podcast where we interview industry leaders, farmers, and innovators about the future of agriculture.</p>
+                <a href="404.html" class="btn btn-dark" style="background: var(--blog-primary); color: white; padding: 12px 25px; border-radius: 30px; display: inline-block; margin-top: 15px;">Listen on Spotify</a>
+            </div>
+            <div class="podcast-episodes">
+                <div class="ep-card">
+                    <div class="ep-play">▶</div>
+                    <div class="ep-text">
+                        <span>Ep. 42 | 45 min</span>
+                        <h4>Navigating Global Supply Chains</h4>
+                    </div>
+                </div>
+                <div class="ep-card">
+                    <div class="ep-play">▶</div>
+                    <div class="ep-text">
+                        <span>Ep. 41 | 38 min</span>
+                        <h4>The Rise of Organic Cooperatives</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Upcoming Events / Webinars -->
+    <section data-aos="fade-up" class="blog-container events-section">
+        <h2 class="blog-section-title">Upcoming Webinars</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">24</span>
+                    <span class="month">AUG</span>
+                </div>
+                <div class="event-details">
+                    <h4>Mastering Smart Irrigation Systems</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Online Webinar | 2:00 PM EST</p>
+                    <a href="404.html">Register Free <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">05</span>
+                    <span class="month">SEP</span>
+                </div>
+                <div class="event-details">
+                    <h4>Navigating New Government Grants</h4>
+                    <p data-aos="fade-up" data-aos-delay="100">Online Q&A | 1:00 PM EST</p>
+                    <a href="404.html">Register Free <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Community Gallery Section -->
+    <section data-aos="fade-up" class="blog-container gallery-section">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px;">
+            <h2 class="blog-section-title" style="margin-bottom: 0;">#STACKLYFarms</h2>
+            <a href="404.html" style="color: var(--blog-secondary); font-weight: 600;">Follow us on Instagram</a>
+        </div>
+        <div class="social-gallery">
+            <img src="assets/agri_mach.jpg" alt="STACKLYFarms Tractor">
+            <img src="assets/agri_market.jpg" alt="STACKLYFarms Market">
+            <img src="assets/agri_digital.jpg" alt="STACKLYFarms Drone Tech">
+            <img src="assets/agri_weather.jpg" alt="STACKLYFarms Weather Checking">
+            <img src="assets/blog_feat.jpg" alt="STACKLYFarms Solar Field">
+        </div>
+    </section>
+
+    <!-- 9. Newsletter Section -->
+    <section data-aos="fade-up" class="blog-container">
+        <div class="newsletter">            <h2>Stay Updated</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Get the latest agricultural insights, funding news, and farming tips delivered straight to your inbox every week.</p>
+            <form action="#">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="404.html">Dashboard</a>
+                <a href="404.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="404.html">Farmer Registration</a>
+                <a href="404.html">Government Schemes</a>
+                <a href="404.html">Crop Advisory</a>
+                <a href="404.html">Soil Testing</a>
+                <a href="404.html">Market Prices</a>
+            </div>
+            <div class="footer-col">
+                <h4>Market Prices</h4>
+                <a href="404.html">Publications</a>
+                <a href="404.html">Downloads</a>
+                <a href="404.html">Policies</a>
+                <a href="404.html">News & Updates</a>
+            </div>
+            <div class="footer-col contact-info-footer">
+                <h4>Contact</h4>
+                <p data-aos="fade-up" data-aos-delay="100">STACKLY</p>
+                <p data-aos="fade-up" data-aos-delay="100"><a href="https://www.google.com/maps/place/Stackly/@11.6829566,78.1739798,17z/data=!3m1!4b1!4m6!3m5!1s0x3babefef7fd970bb:0xe11aef1a71994f9!8m2!3d11.6829566!4d78.1739798!16s%2Fg%2F11l660s35r?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-location-dot inline-icon"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</a></p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-phone inline-icon"></i> 9876543210</p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-envelope inline-icon"></i> info@stackly.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="close-menu-btn" id="close-menu-btn"><i class="fa-solid fa-xmark"></i></div>
+                        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Service</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-buttons">
+                <a href="signin.html" class="mobile-btn">Sign In</a>
+                <a href="register.html" class="mobile-btn mobile-btn-primary">Register</a>
+            </div>
+        </nav>
+    </div>
+                <!-- GSAP & AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if(typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

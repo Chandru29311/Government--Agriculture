@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Nextley Agriculture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+
+    <!-- Header / Navbar -->
+    <header class="navbar navbar-relative">
+                <a href="index.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="assets/logo_0005.webp" alt="Stackly Logo" style="height: 40px; margin-top: 5px;">
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="signin.html" class="nav-text-link active">Sign In</a>
+            <a href="register.html" class="nav-text-link">Register</a>
+        </div>
+    
+        <div class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <!-- Main Auth Area -->
+    <main class="auth-main">
+        <div class="auth-header text-center">
+            <h1>Welcome <span class="highlight">Back</span></h1>
+        </div>
+
+        <div class="auth-container">
+            <div class="auth-card" data-aos="zoom-in">
+                <h2>Sign In</h2>
+                <p data-aos="fade-up" data-aos-delay="100" class="auth-subtitle">Enter your credentials to continue</p>
+                
+                                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="role">Select Role</label>
+                        <select id="role" name="role" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; margin-bottom: 20px;">
+                            <option value="" disabled selected>Select your role...</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address/ Farmers ID</label>
+                        <input type="text" id="email" name="email" placeholder="Enter your email or Farm ID" required>
+                    </div>
+                    
+                    <div class="form-group" style="position: relative;">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 43px; cursor: pointer; color: #888;" onclick="togglePassword(this)"></i>
+                    </div>
+                    
+                    <div class="auth-actions">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember Me</span>
+                        </label>
+                        <a href="404.html" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary full-width-btn btn-lg">Sign In</button>
+                    
+                    <div class="auth-divider">
+                        <span>or continuum with</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-outline full-width-btn btn-lg" onclick="window.location.href='404.html'">
+                        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20px" height="20px">
+                            <p data-aos="fade-up" data-aos-delay="100"ath fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <p data-aos="fade-up" data-aos-delay="100"ath fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                            <p data-aos="fade-up" data-aos-delay="100"ath fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                            <p data-aos="fade-up" data-aos-delay="100"ath fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        Google
+                    </button>
+                    
+                    <p data-aos="fade-up" data-aos-delay="100" class="auth-footer-text">
+                        Dont have an account? <a href="register.html" class="highlight">Register Now</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- The background image placed at the bottom -->
+        <div class="auth-bg"></div>
+    </main>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="404.html">Dashboard</a>
+                <a href="404.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="404.html">Farmer Registration</a>
+                <a href="404.html">Government Schemes</a>
+                <a href="404.html">Crop Advisory</a>
+                <a href="404.html">Soil Testing</a>
+                <a href="404.html">Market Prices</a>
+            </div>
+            <div class="footer-col">
+                <h4>Market Prices</h4>
+                <a href="404.html">Publications</a>
+                <a href="404.html">Downloads</a>
+                <a href="404.html">Policies</a>
+                <a href="404.html">News & Updates</a>
+            </div>
+            <div class="footer-col contact-info-footer">
+                <h4>Contact</h4>
+                <p data-aos="fade-up" data-aos-delay="100">STACKLY</p>
+                <p data-aos="fade-up" data-aos-delay="100"><a href="https://www.google.com/maps/place/Stackly/@11.6829566,78.1739798,17z/data=!3m1!4b1!4m6!3m5!1s0x3babefef7fd970bb:0xe11aef1a71994f9!8m2!3d11.6829566!4d78.1739798!16s%2Fg%2F11l660s35r?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-location-dot inline-icon"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</a></p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-phone inline-icon"></i> 9876543210</p>
+                <p data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-envelope inline-icon"></i> info@stackly.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="close-menu-btn" id="close-menu-btn"><i class="fa-solid fa-xmark"></i></div>
+                        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Service</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-buttons">
+                <a href="signin.html" class="mobile-btn">Sign In</a>
+                <a href="register.html" class="mobile-btn mobile-btn-primary">Register</a>
+            </div>
+        </nav>
+    </div>
+                <!-- GSAP & AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if(typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

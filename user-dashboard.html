@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - STACKLY Agriculture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for Farm Overview -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+                <a href="index.html" style="text-decoration: none;"><div class="dash-logo" style="justify-content: center; padding: 20px 0;"><img src="assets/logo_0005.webp" alt="Stackly Logo" style="height: 50px;"></div></a>
+        <nav class="admin-nav-container">
+            <a href="#" class="admin-nav-item active-solid tab-link" data-target="user-dash">
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> Overview
+            </a>
+            <a href="#" class="admin-nav-item tab-link" data-target="user-farm">
+                <span class="nav-icon"><i class="fa-solid fa-leaf"></i></span> Farm Management
+            </a>
+            <a href="#" class="admin-nav-item tab-link" data-target="user-market">
+                <span class="nav-icon"><i class="fa-solid fa-store"></i></span> Marketplace
+            </a>
+            <a href="#" class="admin-nav-item tab-link" data-target="user-orders">
+                <span class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span> Orders
+            </a>
+            <a href="#" class="admin-nav-item tab-link" data-target="user-settings">
+                <span class="nav-icon"><i class="fa-solid fa-gear"></i></span> Settings
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-user-profile">
+                <div class="sidebar-user-avatar">S</div>
+                <div class="sidebar-user-details">
+                    <span class="sidebar-user-name" style="color:var(--text-main); font-weight:600;">Farmer Member</span>
+                    <span class="sidebar-user-email" style="color:var(--text-light); font-size:0.8rem;">svikram151003@gmail.com</span>
+                </div>
+            </div>
+            <div class="dash-logout" style="margin-top: 10px;">
+                <a href="signin.html">
+                    <span class="nav-icon"><i class="fa-solid fa-right-from-bracket"></i></span> Logout
+                </a>
+            </div>
+        </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+        
+        <!-- Topbar -->
+        <header class="dash-topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+                <h2 class="topbar-title" id="topbar-title">Dashboard</h2>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-user-profile">
+                    <div class="topbar-user-details desktop-only">
+                        <span class="topbar-user-name">Farmer Member</span>
+                        <span class="topbar-user-email">svikram151003@gmail.com</span>
+                    </div>
+                    <div class="topbar-user-avatar">S</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Container -->
+        <div class="dash-content">
+            
+            <div id="user-dash" class="content-section active">
+            <!-- Page Header -->
+            <div class="dash-header-row">
+                <div class="header-text">
+                    <h1>Welcome back, <span class="welcome-name"></span>!</h1>
+                    <p data-aos="fade-up" data-aos-delay="100">Here's what's happening on your farm today.</p>
+                </div>
+                <div class="date-picker">
+                    May 24, 2025
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="dash-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon light-green-bg"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-title">Total Crops</span>
+                        <span class="stat-value">8</span>
+                        <span class="stat-highlight">Active Crops</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon light-green-bg"><i class="fa-solid fa-tractor"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-title">Farm Size</span>
+                        <span class="stat-value">5.2</span>
+                        <span class="stat-highlight">Acres</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon light-green-bg"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-title">Monthly Yield</span>
+                        <span class="stat-value">2.4</span>
+                        <span class="stat-highlight">Tons</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon light-green-bg"><i class="fa-solid fa-coins"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-title">Total Earnings</span>
+                        <span class="stat-value">148,250</span>
+                        <span class="stat-highlight">This Month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="dash-charts-grid">
+                <!-- Farm Overview Chart -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Farm Overview</h3>
+                        <select class="dropdown-select">
+                            <option>This Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="farmOverviewChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Weather Update -->
+                <div class="weather-card">
+                    <div class="card-header">
+                        <h3>Weather Update</h3>
+                    </div>
+                    <div class="weather-main">
+                        <div class="weather-temp">
+                            <span class="weather-icon-large"><i class="fa-solid fa-cloud-sun"></i></span>
+                            <div class="temp-info">
+                                <span class="temp-val">32°C</span>
+                                <span class="temp-desc">Partly Cloudy</span>
+                            </div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="w-detail">
+                                <span class="w-label">Humidity</span>
+                                <span class="w-value">65%</span>
+                            </div>
+                            <div class="w-detail">
+                                <span class="w-label">Wind</span>
+                                <span class="w-value">12 km/h</span>
+                            </div>
+                            <div class="w-detail">
+                                <span class="w-label">Rainfall</span>
+                                <span class="w-value">0 mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="404.html" class="view-link">View full forecast</a>
+                </div>
+            </div>
+
+            <!-- Bottom Grid -->
+            <div class="dash-bottom-grid">
+                <!-- Recent Activities -->
+                <div class="list-card">
+                    <h3>Recent Activities</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="act-icon bg-light-green"><i class="fa-solid fa-seedling"></i></div>
+                            <div class="act-details">
+                                <h4>Paddy crop updated</h4>
+                                <p data-aos="fade-up" data-aos-delay="100">Growth stage: Tillering</p>
+                            </div>
+                            <span class="act-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="act-icon bg-light-blue"><i class="fa-solid fa-cloud"></i></div>
+                            <div class="act-details">
+                                <h4>Weather alert</h4>
+                                <p data-aos="fade-up" data-aos-delay="100">Heavy rainfall expected tomorrow</p>
+                            </div>
+                            <span class="act-time">5 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="act-icon bg-light-orange"><i class="fa-solid fa-box"></i></div>
+                            <div class="act-details">
+                                <h4>Order delivered</h4>
+                                <p data-aos="fade-up" data-aos-delay="100">Fertilizer order #ORD1234 delivered</p>
+                            </div>
+                            <span class="act-time">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Prices -->
+                <div class="list-card">
+                    <h3>Market Prices (Today)</h3>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <div class="price-icon bg-light-green"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <span class="crop-name">Rice (Paddy)</span>
+                            <span class="crop-price">2,150 / Quintal</span>
+                            <span class="price-change positive">2.5%</span>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-icon bg-light-orange"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <span class="crop-name">Wheat</span>
+                            <span class="crop-price">2,020 / Quintal</span>
+                            <span class="price-change positive">1.8%</span>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-icon bg-light-yellow"><i class="fa-solid fa-leaf"></i></div>
+                            <span class="crop-name">Maize</span>
+                            <span class="crop-price">1,860 / Quintal</span>
+                            <span class="price-change negative">0.5%</span>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-icon bg-light-gray"><i class="fa-solid fa-cloud"></i></div>
+                            <span class="crop-name">Cotton</span>
+                            <span class="crop-price">5,620 / Quintal</span>
+                            <span class="price-change positive">3.2%</span>
+                        </div>
+                    </div>
+                    <a href="404.html" class="view-link mt-auto">"View all prices"</a>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="list-card actions-card">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="404.html" class="action-btn">
+                            <span class="btn-icon"><i class="fa-solid fa-seedling"></i></span> Add New Crop
+                        </a>
+                        <a href="404.html" class="action-btn">
+                            <span class="btn-icon"><i class="fa-solid fa-cloud"></i></span> Check Weather
+                        </a>
+                        <a href="404.html" class="action-btn">
+                            <span class="btn-icon"><i class="fa-solid fa-chart-line"></i></span> View Market Prices
+                        </a>
+                        <a href="404.html" class="action-btn">
+                            <span class="btn-icon"><i class="fa-solid fa-cart-shopping"></i></span> Place New Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div> <!-- End of user-dash -->
+
+            <!-- Placeholder for My Farm & Crops -->
+            <div id="user-farm" class="content-section">
+                <div class="dash-header-row">
+                    <div class="header-text">
+                        <h1>My Farm & Crops</h1>
+                        <p data-aos="fade-up" data-aos-delay="100">Manage your land and track crop growth.</p>
+                    </div>
+                </div>
+                
+                <div class="dash-charts-grid" style="margin-bottom: 25px;">
+                    <!-- Farm Overview Chart -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Farm Output Forecast</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 250px;">
+                            <canvas id="userFarmOutputChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="dash-stats-grid" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="stat-card stat-card-admin" style="height: auto; padding: 15px;">
+                            <div class="stat-icon light-green-bg" style="width: 40px; height: 40px; font-size: 1.2rem;"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Total Land Area</span>
+                                <span class="stat-value" style="font-size: 1.2rem;">12.5 Acres</span>
+                            </div>
+                        </div>
+                        <div class="stat-card stat-card-admin" style="height: auto; padding: 15px;">
+                            <div class="stat-icon bg-light-orange" style="width: 40px; height: 40px; font-size: 1.2rem;"><i class="fa-solid fa-seedling"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Active Crops</span>
+                                <span class="stat-value" style="font-size: 1.2rem;">3 Types</span>
+                            </div>
+                        </div>
+                        <div class="stat-card stat-card-admin" style="height: auto; padding: 15px;">
+                            <div class="stat-icon bg-light-blue" style="width: 40px; height: 40px; font-size: 1.2rem;"><i class="fa-solid fa-weight-hanging"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Est. Harvest</span>
+                                <span class="stat-value" style="font-size: 1.2rem;">4,200 Kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Widgets for Farms -->
+                <div class="dash-charts-grid" style="margin-bottom: 25px;">
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Soil Health Monitor</h3>
+                            <span style="font-size: 0.8rem; color: #777;">Live Sensor Data</span>
+                        </div>
+                        <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+                                <i class="fa-solid fa-droplet" style="color: #3498db; font-size: 1.5rem; margin-bottom: 5px;"></i>
+                                <h4 style="margin: 0; font-weight: 500;">Moisture</h4>
+                                <span style="font-weight: 600; font-size: 1.1rem; color: #3498db;">45%</span>
+                            </div>
+                            <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+                                <i class="fa-solid fa-flask" style="color: #9b59b6; font-size: 1.5rem; margin-bottom: 5px;"></i>
+                                <h4 style="margin: 0; font-weight: 500;">pH Level</h4>
+                                <span style="font-weight: 600; font-size: 1.1rem; color: #3E7B27;">6.8 (Optimal)</span>
+                            </div>
+                            <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+                                <span style="display: block; font-weight: bold; font-size: 1.2rem; color: #e67e22; margin-bottom: 5px;">N</span>
+                                <h4 style="margin: 0; font-weight: 500;">Nitrogen</h4>
+                                <span style="font-weight: 600; font-size: 1.1rem; color: #333;">Normal</span>
+                            </div>
+                            <div style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+                                <span style="display: block; font-weight: bold; font-size: 1.2rem; color: #f1c40f; margin-bottom: 5px;">K</span>
+                                <h4 style="margin: 0; font-weight: 500;">Potassium</h4>
+                                <span style="font-weight: 600; font-size: 1.1rem; color: #E74C3C;">Low</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Farm Task Calendar</h3>
+                        </div>
+                        <div class="activity-list" style="margin-top: 15px;">
+                            <div class="activity-item">
+                                <div class="act-icon bg-light-orange"><i class="fa-solid fa-spray-can"></i></div>
+                                <div class="act-details">
+                                    <h4>Apply Pesticide (Cotton)</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100">Expected pest activity due to humidity.</p>
+                                </div>
+                                <span class="act-time" style="color: #E74C3C; font-weight: 600;">Today</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="act-icon bg-light-green"><i class="fa-solid fa-tractor"></i></div>
+                                <div class="act-details">
+                                    <h4>Tilling (Wheat Field)</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100">Prepare soil for next planting cycle.</p>
+                                </div>
+                                <span class="act-time">In 2 days</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="act-icon bg-light-blue"><i class="fa-solid fa-droplet"></i></div>
+                                <div class="act-details">
+                                    <h4>Irrigation Cycle</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100">Scheduled deep watering for Mustard.</p>
+                                </div>
+                                <span class="act-time">In 4 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop Management Table -->
+                <div class="list-card">
+                    <div class="card-header border-bottom-header">
+                        <h3>Crop Management</h3>
+                        <div class="header-actions">
+                            <a href="404.html" style="padding: 8px 15px; background: #85A947; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: 500;"><i class="fa-solid fa-plus"></i> New Crop</a>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="crops-table">
+                            <thead>
+                                <tr>
+                                    <th>Crop Type</th>
+                                    <th>Status</th>
+                                    <th>Area Planted</th>
+                                    <th>Planted Date</th>
+                                    <th>Est. Harvest</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-wheat-awn" style="color: #f39c12;"></i> Wheat</div></td>
+                                    <td><span class="status-badge status-processing">Growing</span></td>
+                                    <td>5.0 Acres</td>
+                                    <td>12 Oct 2025</td>
+                                    <td style="font-weight: 600;">Apr 2026</td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-leaf" style="color: #3E7B27;"></i> Cotton</div></td>
+                                    <td><span class="status-badge status-processing">Flowering</span></td>
+                                    <td>4.5 Acres</td>
+                                    <td>15 May 2025</td>
+                                    <td style="font-weight: 600;">Oct 2025</td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-seedling" style="color: #85A947;"></i> Mustard</div></td>
+                                    <td><span class="status-badge status-delivered">Ready</span></td>
+                                    <td>3.0 Acres</td>
+                                    <td>20 Sep 2025</td>
+                                    <td style="font-weight: 600;">Mar 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for Weather & Market -->
+            <div id="user-market" class="content-section">
+                <div class="dash-header-row">
+                    <div class="header-text">
+                        <h1>Weather & Market</h1>
+                        <p data-aos="fade-up" data-aos-delay="100">Get the latest forecast and commodity prices.</p>
+                    </div>
+                </div>
+
+                <!-- Weather Forecast Grid -->
+                <div class="dash-stats-grid" style="margin-bottom: 25px;">
+                    
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-info" style="align-items: center; text-align: center;">
+                            <span class="stat-title">Tomorrow</span>
+                            <i class="fa-solid fa-sun" style="font-size: 2rem; color: #f39c12; margin: 10px 0;"></i>
+                            <span class="stat-value" style="font-size: 1.2rem;">34°C / 22°C</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-info" style="align-items: center; text-align: center;">
+                            <span class="stat-title">Wed, 14 Aug</span>
+                            <i class="fa-solid fa-cloud" style="font-size: 2rem; color: #95a5a6; margin: 10px 0;"></i>
+                            <span class="stat-value" style="font-size: 1.2rem;">31°C / 21°C</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-info" style="align-items: center; text-align: center;">
+                            <span class="stat-title">Thu, 15 Aug</span>
+                            <i class="fa-solid fa-cloud-showers-heavy" style="font-size: 2rem; color: #3498db; margin: 10px 0;"></i>
+                            <span class="stat-value" style="font-size: 1.2rem;">28°C / 20°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-charts-grid" style="margin-bottom: 25px;">
+                    <!-- Market Trends Chart -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Market Price Trends</h3>
+                            <select class="dropdown-select" style="padding: 5px; border-radius: 5px; border: 1px solid #ddd;">
+                                <option>Last 30 Days</option>
+                                <option>Last 6 Months</option>
+                            </select>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 250px;">
+                            <canvas id="userMarketChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Market Rates Table -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Live Mandi Rates</h3>
+                            <span style="font-size: 0.8rem; color: #777;">Pune APMC</span>
+                        </div>
+                        <div style="overflow-x: auto; margin-top: 15px;">
+                            <table class="crops-table" style="font-size: 0.95rem;">
+                                <thead>
+                                    <tr>
+                                        <th>Commodity</th>
+                                        <th>Price (per Quintal)</th>
+                                        <th>Trend</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wheat (Lokwan)</td>
+                                        <td style="font-weight: 600;">₹2,850</td>
+                                        <td style="color: #3E7B27;"><i class="fa-solid fa-arrow-up"></i> +₹50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cotton (Hybrid)</td>
+                                        <td style="font-weight: 600;">₹7,200</td>
+                                        <td style="color: #E74C3C;"><i class="fa-solid fa-arrow-down"></i> -₹120</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soybean</td>
+                                        <td style="font-weight: 600;">₹4,500</td>
+                                        <td style="color: #3E7B27;"><i class="fa-solid fa-arrow-up"></i> +₹10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Onion (Red)</td>
+                                        <td style="font-weight: 600;">₹3,200</td>
+                                        <td style="color: #95a5a6;"><i class="fa-solid fa-minus"></i> No Change</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-charts-grid" style="margin-bottom: 25px;">
+                    <!-- Agro-Advisory Alerts -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Agro-Advisory Alerts</h3>
+                        </div>
+                        <div class="activity-list" style="margin-top: 15px;">
+                            <div class="activity-item" style="background: rgba(231, 76, 60, 0.05); padding: 15px; border-left: 4px solid #E74C3C; border-radius: 4px;">
+                                <div class="act-icon" style="background: none; color: #E74C3C; font-size: 1.5rem;"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+                                <div class="act-details">
+                                    <h4 style="color: #c0392b;">Heavy Rain Warning</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="color: #555;">Expected downpour tomorrow. Halt pesticide application for the next 48 hours to prevent runoff.</p>
+                                </div>
+                            </div>
+                            <div class="activity-item" style="background: rgba(243, 156, 18, 0.05); padding: 15px; border-left: 4px solid #f39c12; border-radius: 4px;">
+                                <div class="act-icon" style="background: none; color: #f39c12; font-size: 1.5rem;"><i class="fa-solid fa-bug"></i></div>
+                                <div class="act-details">
+                                    <h4 style="color: #d35400;">Pest Alert: Cotton Aphids</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="color: #555;">High humidity may trigger aphid attacks. Inspect cotton leaves closely this week.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Market Demand Chart -->
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Buyer Demand vs Supply</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 250px;">
+                            <canvas id="userDemandChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for Orders -->
+            <div id="user-orders" class="content-section">
+                <div class="dash-header-row">
+                    <div class="header-text">
+                        <h1>Orders</h1>
+                        <p data-aos="fade-up" data-aos-delay="100">Track your past and active orders for supplies.</p>
+                    </div>
+                </div>
+                
+                <!-- Order Stats -->
+                <div class="dash-stats-grid" style="margin-bottom: 25px;">
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-icon light-green-bg"><i class="fa-solid fa-box-open"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-title">Total Orders</span>
+                            <span class="stat-value">45</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-icon bg-light-orange"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-title">Pending Deliveries</span>
+                            <span class="stat-value">2</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-admin">
+                        <div class="stat-icon bg-light-blue"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-title">Total Spent</span>
+                            <span class="stat-value">₹1,24,500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Widgets for Orders -->
+                <div class="dash-charts-grid" style="margin-bottom: 25px;">
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Live Delivery Tracking</h3>
+                            <span style="font-size: 0.8rem; color: #777;">Order #ORD-9821</span>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 500;">
+                                <span>Dispatched</span>
+                                <span style="color: #3498db;">In Transit</span>
+                                <span>Delivered</span>
+                            </div>
+                            <div style="width: 100%; background: #eee; height: 10px; border-radius: 5px; position: relative;">
+                                <div style="width: 65%; background: #3498db; height: 100%; border-radius: 5px;"></div>
+                                <div style="position: absolute; left: 65%; top: -5px; width: 20px; height: 20px; background: white; border: 4px solid #3498db; border-radius: 50%; transform: translateX(-50%);"></div>
+                            </div>
+                            <p data-aos="fade-up" data-aos-delay="100" style="text-align: center; margin-top: 15px; color: #555; font-size: 0.95rem;">
+                                <i class="fa-solid fa-truck-fast" style="color: #3498db; margin-right: 5px;"></i> Arriving today by 3:00 PM
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Expenditure Breakdown</h3>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 200px; display: flex; justify-content: center;">
+                            <canvas id="userExpenditureChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order History Table -->
+                <div class="list-card">
+                    <div class="card-header border-bottom-header">
+                        <h3>Order History</h3>
+                        <div class="header-actions">
+                            <select style="padding: 8px 15px; border-radius: 20px; border: 1px solid #ddd; outline: none;">
+                                <option>Last 30 Days</option>
+                                <option>Last 6 Months</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="crops-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Items</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 600;">#ORD-9821</td>
+                                    <td>Wheat Seeds (5 Bags)</td>
+                                    <td>10 Aug 2026</td>
+                                    <td><span class="status-badge status-processing">Processing</span></td>
+                                    <td>₹12,450</td>
+                                    <td><a href="404.html" style="background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Track</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">#ORD-9742</td>
+                                    <td>Urea Fertilizer (2 Bags)</td>
+                                    <td>05 Aug 2026</td>
+                                    <td><span class="status-badge status-shipped">Shipped</span></td>
+                                    <td>₹3,200</td>
+                                    <td><a href="404.html" style="background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Track</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600;">#ORD-9105</td>
+                                    <td>Tractor Parts</td>
+                                    <td>12 Jul 2026</td>
+                                    <td><span class="status-badge status-delivered">Delivered</span></td>
+                                    <td>₹45,000</td>
+                                    <td><a href="404.html" style="background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Invoice</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for Settings -->
+            <div id="user-settings" class="content-section">
+                <div class="dash-header-row">
+                    <div class="header-text">
+                        <h1>Settings</h1>
+                        <p data-aos="fade-up" data-aos-delay="100">Update your profile and account settings.</p>
+                    </div>
+                </div>
+                
+                <div class="dash-charts-grid">
+                    <!-- Profile Configuration -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Profile Settings</h3>
+                        </div>
+                        <form style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
+                            <div>
+                                <label style="display: block; font-weight: 500; margin-bottom: 5px; color: #444;">Full Name</label>
+                                <input type="text" value="Anil Kumar" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 500; margin-bottom: 5px; color: #444;">Mobile Number</label>
+                                <input type="tel" value="+91 9876543210" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 500; margin-bottom: 5px; color: #444;">Farm Location</label>
+                                <input type="text" value="Pune, Maharashtra" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none;">
+                            </div>
+                            <a href="404.html" type="button" style="padding: 10px 20px; background: #85A947; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; align-self: flex-start;">Update Profile</a>
+                        </form>
+                    </div>
+
+                    <!-- Alert Preferences -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Alert Preferences</h3>
+                        </div>
+                        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0; font-weight: 600;">Weather Alerts (SMS)</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="margin: 5px 0 0; font-size: 0.85rem; color: #777;">Severe weather warnings for your area.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0; font-weight: 600;">Market Price Drops</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="margin: 5px 0 0; font-size: 0.85rem; color: #777;">Notify me when my crop prices fall.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="margin: 0; font-weight: 600;">Order Delivery Updates</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="margin: 5px 0 0; font-size: 0.85rem; color: #777;">Track incoming supply shipments.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <a href="404.html" style="width: 100%; margin-top: auto; padding: 10px; border-radius: 8px; background: #f8f9fa; border: 1px solid #ddd; cursor: pointer; color: #555; font-weight: 600; margin-top: 30px;">Save Preferences</a>
+                    </div>
+                </div>
+
+                <!-- Secondary Widgets for Settings -->
+                <div class="dash-charts-grid" style="margin-top: 25px;">
+                    <!-- Subscription Status -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Subscription & Quotas</h3>
+                        </div>
+                        <div style="margin-top: 20px; text-align: center; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 20px; background: rgba(243, 156, 18, 0.1); color: #f39c12; border-radius: 20px; font-weight: bold; margin-bottom: 20px;">
+                                <i class="fa-solid fa-crown" style="margin-right: 5px;"></i> Premium Farmer Plan
+                            </div>
+                            <div style="display: flex; justify-content: space-around; border-top: 1px solid #eee; padding-top: 20px;">
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.5rem; color: #333;">45/50</h4>
+                                    <span style="color: #777; font-size: 0.9rem;">Listings Used</span>
+                                </div>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.5rem; color: #333;">Unlimited</h4>
+                                    <span style="color: #777; font-size: 0.9rem;">Advisories</span>
+                                </div>
+                            </div>
+                            <a href="404.html" style="width: 100%; margin-top: 20px; padding: 10px; border-radius: 8px; background: #f39c12; border: none; cursor: pointer; color: white; font-weight: 600;" href="404.html">Upgrade Plan</a>
+                        </div>
+                    </div>
+
+                    <!-- Linked Accounts -->
+                    <div class="list-card">
+                        <div class="card-header border-bottom-header">
+                            <h3>Linked Payment Methods</h3>
+                            <div class="header-actions">
+                                <a href="404.html" style="background: none; border: none; color: #3498db; cursor: pointer; font-weight: 600;"><i class="fa-solid fa-plus"></i> Add New</a>
+                            </div>
+                        </div>
+                        <div class="activity-list" style="margin-top: 20px;">
+                            <div class="activity-item" style="align-items: center;">
+                                <div class="act-icon" style="background: #ecf0f1; color: #2c3e50;"><i class="fa-solid fa-building-columns"></i></div>
+                                <div class="act-details">
+                                    <h4 style="margin: 0;">HDFC Bank Account</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="margin: 0; color: #777;">Ending in **** 1234</p>
+                                </div>
+                                <span class="status-badge status-delivered">Primary</span>
+                            </div>
+                            <div class="activity-item" style="align-items: center;">
+                                <div class="act-icon" style="background: rgba(46, 204, 113, 0.1); color: #27ae60;"><i class="fa-solid fa-wallet"></i></div>
+                                <div class="act-details">
+                                    <h4 style="margin: 0;">Kisan Wallet Balance</h4>
+                                    <p data-aos="fade-up" data-aos-delay="100" style="margin: 0; color: #777;">Last updated: Today</p>
+                                </div>
+                                <span style="font-weight: bold; font-size: 1.1rem; color: #27ae60;">₹14,500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="dash-footer-bottom">
+                <p data-aos="fade-up" data-aos-delay="100">Â© 2025 STACKLY Agriculture. All rights reserved.</p>
+                <p data-aos="fade-up" data-aos-delay="100">Empowering <strong>Farmers</strong>. Strengthening <strong>Agriculture.</strong></p>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="close-menu-btn" id="close-menu-btn"><i class="fa-solid fa-xmark"></i></div>
+                        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Service</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-nav-buttons">
+                <a href="signin.html" class="mobile-btn">Sign In</a>
+                <a href="register.html" class="mobile-btn mobile-btn-primary">Register</a>
+            </div>
+        </nav>
+    </div>
+                <!-- GSAP & AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if(typeof AOS !== 'undefined') {
+                AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
