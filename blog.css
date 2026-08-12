@@ -101,7 +101,7 @@ body.blog-page {
 .featured-img {
     flex: 1;
     min-height: 400px;
-    background: url('assets/blog_feat.jpg') no-repeat center center/cover;
+    background: url('assets/blog_feat.webp') no-repeat center center/cover;
 }
 .featured-content {
     flex: 1;
