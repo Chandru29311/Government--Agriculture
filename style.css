@@ -3087,11 +3087,20 @@ input:checked + .slider:before {
     box-shadow: 0 5px 20px rgba(0,0,0,0.03);
     text-align: center;
     border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 .highlight-card {
-    border-color: var(--primary);
+    border: 2px solid var(--primary);
     box-shadow: 0 20px 40px rgba(148, 153, 74, 0.15);
     transform: scale(1.05);
+}
+.highlight-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(148, 153, 74, 0.2);
 }
 .pricing-card h3 {
     font-size: 1.5rem;
